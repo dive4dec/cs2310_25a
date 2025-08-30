@@ -1,0 +1,31 @@
+name: Local Assistant
+version: 1.0.0
+schema: v1
+models:
+  - name: DIVE chat
+    provider: openai
+    model: chat
+    apiBase: http://dive.ai-chat:8000/v1
+    roles:
+      - chat
+      - edit
+      - apply
+      - autocomplete
+    capabilities:
+      - tool_use
+
+  - name: DIVE Embed
+    provider: openai
+    model: embed
+    apiBase: http://dive.ai-embed:8000/v1
+    roles:
+      - embed
+
+context:
+  - provider: code
+  - provider: docs
+  - provider: diff
+  - provider: terminal
+  - provider: problems
+  - provider: folder
+  - provider: codebase
