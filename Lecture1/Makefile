@@ -63,10 +63,8 @@ clean-all:
 # - CodeLLDB manual: https://github.com/vadimcn/codelldb/blob/master/MANUAL.md#expressions
 # - VSCode clangd: https://github.com/clangd/vscode-clangd
 # - VSCode debug: https://code.visualstudio.com/docs/debugtest/debugging
-# - clangd config: https://clangd.llvm.org/config
 setup:
 	@echo "Setting up clangd for Code Server..." && \
 	code-server --install-extension llvm-vs-code-extensions.vscode-clangd && \
 	code-server --install-extension vadimcn.vscode-lldb && \
-	mkdir -p ~/.config/clangd/ && cp clangd_config.yaml "$$_/config.yaml" && \
 	echo "Done!"
